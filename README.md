@@ -62,6 +62,53 @@ Server starts at `http://localhost:3000`.
 - `PATCH /products/:id`
 - `DELETE /products/:id`
 
+## Example Requests (cURL)
+
+Replace `<BASE_URL>` with `http://localhost:3000` or your Vercel URL.
+
+```bash
+# Health
+curl <BASE_URL>/
+
+# Create
+curl -X POST <BASE_URL>/products \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Gaming Mouse","detail":"RGB mouse","price":89.99}'
+
+# List
+curl <BASE_URL>/products
+
+# Get by id
+curl <BASE_URL>/products/<PRODUCT_ID>
+
+# Update
+curl -X PATCH <BASE_URL>/products/<PRODUCT_ID> \
+  -H "Content-Type: application/json" \
+  -d '{"price":79.99}'
+
+# Delete
+curl -X DELETE <BASE_URL>/products/<PRODUCT_ID>
+```
+
+## Example Requests (PowerShell)
+
+```powershell
+# Create
+Invoke-RestMethod -Uri <BASE_URL>/products -Method POST -ContentType "application/json" -Body '{"name":"Gaming Mouse","detail":"RGB mouse","price":89.99}'
+
+# List
+Invoke-RestMethod -Uri <BASE_URL>/products -Method GET
+
+# Get by id
+Invoke-RestMethod -Uri <BASE_URL>/products/<PRODUCT_ID> -Method GET
+
+# Update
+Invoke-RestMethod -Uri <BASE_URL>/products/<PRODUCT_ID> -Method PATCH -ContentType "application/json" -Body '{"price":79.99}'
+
+# Delete
+Invoke-RestMethod -Uri <BASE_URL>/products/<PRODUCT_ID> -Method DELETE
+```
+
 ## Deploy (Vercel)
 
 - Set Vercel Environment Variables:
