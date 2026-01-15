@@ -1,0 +1,26 @@
+{
+  "name": "bun-elysia-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "start": "bun src/index.ts",
+    "prisma": "bunx prisma",
+    "db:generate": "bunx prisma generate",
+    "db:push": "bunx prisma db push",
+    "seed": "bun ./prisma/seed.ts"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.2.0",
+    "@prisma/client": "^7.2.0",
+    "elysia": "^1.4.22",
+    "pg": "^8.17.1"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.16.0",
+    "bun-types": "^1.0.0",
+    "prisma": "^7.2.0",
+    "prismabox": "^1.1.26",
+    "typescript": "^5.5.4"
+  }
+}
